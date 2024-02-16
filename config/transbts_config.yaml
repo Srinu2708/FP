@@ -1,0 +1,32 @@
+model_name: transbts
+id: optimised
+debug: False
+save_to_original_spacing: True
+
+data_dir: /path/to/the/data/
+checkpoint: null
+epochs: 8000
+batch_size: 2
+loss: Dice
+optimizer: sgd
+optim_lr: 0.01
+reg_weight: 0.00003
+lrschedule: null
+amsgrad: True
+poly_learning_rate: True
+
+use_softmax: False
+smooth_dr: 1e-6
+smooth_nr: 0.0
+
+#specific to transbts
+embed_dim: 512
+
+#Data Augmentation
+roi_x: 224
+roi_y: 224
+roi_z: 64
+
+gaussian_aug: False
+intensity_aug: True
+spatial_aug: True

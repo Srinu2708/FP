@@ -1,0 +1,26 @@
+program: train.py
+controller:
+  type: local
+method: bayes
+metric:
+  name: best_eval_criterion
+  goal: maximize
+
+
+parameters:
+  roi:
+      values: [ [ 64, 64, 64 ], [ 128, 128, 64 ], [ 224, 224, 64 ] ]
+  image_fidelity_aug:
+    values: [ True, False ]
+  luminance_and_contrat_aug:
+    values: [ True, False ]
+  scaling_and_resolution_aug:
+    values: [ True, False ]
+  data_dir:
+      values: [ '/path/to/db/A/','/path/to/db/B/' ]
+  loss:
+    values: [ "Dice", "DiceCELoss" ]
+  optimizer_config:
+    values: [ [ "adam", 0.0001, 0.00003 ], [ "adamw", 0.0001, 0.01 ], [ "sgd", 0.01, 0.00003 ] ]
+  include_background:
+    values: [ True, False ]

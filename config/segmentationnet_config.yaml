@@ -1,0 +1,28 @@
+model_name: segmentationnet
+id: optimised
+debug: False
+save_to_original_spacing: True
+
+data_dir: /path/to/the/data/
+checkpoint: null
+epochs: 2500
+batch_size: 2
+loss: DiceCELoss
+optimizer: adam
+optim_lr: 0.0001
+reg_weight: 0.00003
+include_background: True
+val_every: 1
+infer_overlap: 0.5
+warmup_epochs: 50
+smooth_dr: 1e-6
+smooth_nr: 0.0
+use_softmax: False
+#Data Augmentation
+roi_x: 384
+roi_y: 304
+roi_z: 64
+
+image_fidelity_aug: True
+luminance_and_contrat_aug: False
+scaling_and_resolution_aug: False

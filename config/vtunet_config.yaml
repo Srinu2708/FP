@@ -1,0 +1,32 @@
+model_name: vtunet
+id: optimised
+debug: False
+pretrained_weight: ./pretrained_weight/swin_tiny_patch4_window7_224_22k.pth
+save_to_original_spacing: True
+
+data_dir: /path/to/the/data/
+checkpoint: null
+epochs: 10000
+batch_size: 2
+loss: DiceCELoss
+optimizer: adamw
+optim_lr: 0.0001
+reg_weight: 0.01
+lrschedule: null
+poly_learning_rate: True
+smooth_dr: 1e-6
+smooth_nr: 0.0
+
+#Specific VT-UNet
+
+embed_dim: 72
+win_size: 7
+
+#Data Augmentation
+roi_x: 128
+roi_y: 128
+roi_z: 64
+
+image_fidelity_aug: False
+luminance_and_contrat_aug: False
+scaling_and_resolution_aug: False

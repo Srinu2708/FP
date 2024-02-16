@@ -1,0 +1,38 @@
+model_name: swinunetr
+id: optimised
+debug: False
+data_dir: /path/to/the/data/
+pretrained_weight: ./pretrained_weight/model_swinvit.pt
+
+save_to_original_spacing: True
+checkpoint: null
+epochs: 4000
+batch_size: 2
+loss: DiceCELoss
+optimizer: adamw
+optim_lr: 0.0001
+reg_weight: 0.01
+include_background: True
+warmup_epochs: 50
+dropout_rate: 0.0
+dropout_path_rate: 0.0
+smooth_dr: 1e-6
+smooth_nr: 0.0
+
+#Specific swinUNeTr
+pos_embed: perceptron
+norm_name: instance
+num_heads: 12
+mlp_dim: 3072
+hidden_size: 768
+feature_size: 48
+
+
+#Data Augmentation
+roi_x: 256
+roi_y: 224
+roi_z: 64
+
+image_fidelity_aug: False
+luminance_and_contrat_aug: True
+scaling_and_resolution_aug: True

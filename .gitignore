@@ -1,0 +1,11 @@
+/pretrained_weight
+/wandb
+ __pycache__/
+ *.pyc
+/__pycache__
+__pycache__
+.idea
+
+
+# exception to the rule
+!somefolder/.gitkeep 
